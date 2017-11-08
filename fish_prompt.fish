@@ -1,17 +1,9 @@
 #!/usr/bin/env fish
 
-source __background_job.fish
-source __disk.fish
-source __elixir.fish
-source __git.fish
-source __java.fish
-source __mercurial.fish
-source __node.fish
-source __python.fish
-source __ruby.fish
-source __ssh.fish
-source __subversion.fish
-source __time.fish
+set SCRIPT_DIR (pushd (dirname (status --current-filename)); and pwd; and popd)
+
+source $SCRIPT_DIR/__git.fish
+source $SCRIPT_DIR/__ssh.fish
 
 
 function pi_load_styles
