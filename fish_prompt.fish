@@ -6,7 +6,7 @@ function pi_load_styles
   set -g pi_normal_style FFFFFF
   set -g pi_error_style -u FF0000
   set -g pi_rebasing_style FF0000
-  set -g pi_rev_style -i DAE#7F8C8D
+  set -g pi_rev_style -i DAEC77
   set -g pi_branch_style -o 5EEE3F
   set -g pi_dirty_style 11FFA1
   set -g pi_left_right_style FCFF21
