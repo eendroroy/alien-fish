@@ -3,7 +3,7 @@
 function pi_load_styles
   set -g pi_vcs_style 7F8C8D
   set -g pi_ssh_style -o D4AC0D
-  set -g pi_normal_style FFFFFF
+  set -g pi_normal_style 2980B9
   set -g pi_error_style -u FF0000
   set -g pi_rebasing_style FF0000
   set -g pi_rev_style -i DAEC77
