@@ -61,7 +61,7 @@ function pi_prompt_left
     set_color $pi_error_style
   end
 
-  echo -ne (prompt_pwd)
+  echo -ne (pwd | awk -F '/' '{print $NF}')
 
   if not test $last_st -eq 0
     set_color normal
