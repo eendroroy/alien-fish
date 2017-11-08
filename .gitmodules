@@ -1,0 +1,3 @@
+[submodule "libs/promptlib"]
+	path = libs/promptlib
+	url = https://github.com/eendroroy/promptlib-fish.git
