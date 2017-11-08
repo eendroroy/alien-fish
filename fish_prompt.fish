@@ -25,7 +25,6 @@ function pi_git_prompt
     plib_git_branch
     set_color normal
 
-    set_color $pi_normal_style
     echo -ne " "
     set_color $pi_rev_style
     plib_git_rev
@@ -59,9 +58,11 @@ function pi_prompt_left
   echo -ne " "
   if not test $last_st -eq 0
     set_color $pi_error_style
+  else
+    set_color $pi_normal_style
   end
 
-  echo -ne (pwd | awk -F '/' '{print $NF}')
+  echo -ne (prompt_pwd | awk -F '/' '{print $NF}')
 
   if not test $last_st -eq 0
     set_color normal
