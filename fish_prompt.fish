@@ -1,5 +1,19 @@
 #!/usr/bin/env fish
 
+source __background_job.fish
+source __disk.fish
+source __elixir.fish
+source __git.fish
+source __java.fish
+source __mercurial.fish
+source __node.fish
+source __python.fish
+source __ruby.fish
+source __ssh.fish
+source __subversion.fish
+source __time.fish
+
+
 function pi_load_styles
   set -g pi_vcs_style 7F8C8D
   set -g pi_ssh_style -o D4AC0D
