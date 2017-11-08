@@ -4,11 +4,11 @@ function pi_load_styles
   set -g pi_vcs_style 7F8C8D
   set -g pi_ssh_style -o D4AC0D
   set -g pi_normal_style 2980B9
-  set -g pi_error_style -u FF0000
-  set -g pi_rebasing_style FF0000
+  set -g pi_error_style -u CB4335
+  set -g pi_rebasing_style CB4335
   set -g pi_rev_style -i DAEC77
   set -g pi_branch_style -o 5EEE3F
-  set -g pi_dirty_style 11FFA1
+  set -g pi_dirty_style CD6155
   set -g pi_left_right_style FCFF21
   set -g pi_commit_since_style 8AAFC8
   set -g pi_fade_style 8F8F8F
