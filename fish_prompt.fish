@@ -1,17 +1,4 @@
-# name: Agnoster
-# agnoster's Theme - https://gist.github.com/3712874
-# A Powerline-inspired theme for FISH
-#
-# # README
-#
-# In order for this theme to render correctly, you will need a
-# [Powerline-patched font](https://gist.github.com/1595572).
-
-## Set this options in your config.fish (if you want to :])
-# set -g theme_display_user yes
-# set -g theme_hide_hostname yes
-# set -g theme_hide_hostname no
-# set -g default_user your_normal_user
+#!/usr/bin/env fish
 
 set THEME_ROOT (pushd (dirname (status --current-filename)); and pwd; and popd)
 
@@ -49,24 +36,27 @@ function git_prompt
 
     set -l rebasing (plib_is_git_rebasing)
     if [ $rebasing = "1" ]
-	    set_color $pi_rebasing_style
-	    echo -ne "(rebasing)"
-	    set_color normal
-	end
+      set_color $pi_rebasing_style
+      echo -ne "(rebasing)"
+      set_color normal
+  end
   end
 end
 
 function pi_prompt_left
   set -l last_st $status
+  if not test $last_st -eq 0
+    set_color $pi_error_style
+  end
 
-  echo -ne (prompt_pwd)" "
+  echo -ne " "(prompt_pwd)" "
 
   if not test $last_st -eq 0
     set_color $pi_error_style
     echo -ne "("$last_st")"
-    set_color normal
     echo -ne " "
   end
+  set_color normal
 end
 
 function pi_prompt_right
