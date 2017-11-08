@@ -1,14 +1,6 @@
 #!/usr/bin/env fish
 
-set THEME_ROOT (pushd (dirname (status --current-filename)); and pwd; and popd)
-
-set -g MODULES git
-
-source "$THEME_ROOT/libs/promptlib/activate"
-
-source "$THEME_ROOT/modules/colors.fish"
-
-function git_prompt
+function pi_git_prompt
   set -l is_git (plib_is_git)
   if [ $is_git = "1" ]
     set_color $pi_branch_style
@@ -63,7 +55,7 @@ function pi_prompt_left
 end
 
 function pi_prompt_right
-  git_prompt
+  pi_git_prompt
 end
 
 function fish_prompt
