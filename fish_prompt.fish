@@ -29,13 +29,13 @@ function git_prompt
     set_color normal
 
     set_color $pi_normal_style
-    echo -ne "@"
+    echo -ne " "
     set_color $pi_rev_style
     plib_git_rev
     set_color normal
 
     set_color $pi_commit_since_style
-    echo -ne "["(plib_git_commit_since)"]"
+    echo -ne " ["(plib_git_commit_since)"]"
     set_color normal
 
     set_color $pi_dirty_style
@@ -56,7 +56,20 @@ function git_prompt
   end
 end
 
+function pi_prompt
+  set -l last_st $status
+
+  git_prompt
+
+  if not test $last_st -eq 0
+    set_color $pi_error_style
+    echo -ne "("$last_st")"
+    set_color normal
+    echo -ne " "
+  end
+end
+
 function fish_prompt
   pi_load_styles
-  git_prompt
+  pi_prompt
 end
