@@ -56,10 +56,10 @@ function git_prompt
   end
 end
 
-function pi_prompt
+function pi_prompt_left
   set -l last_st $status
 
-  git_prompt
+  echo -ne (prompt_pwd)" "
 
   if not test $last_st -eq 0
     set_color $pi_error_style
@@ -69,7 +69,16 @@ function pi_prompt
   end
 end
 
+function pi_prompt_right
+  git_prompt
+end
+
 function fish_prompt
   pi_load_styles
-  pi_prompt
+  pi_prompt_left
+end
+
+function fish_right_prompt
+  pi_load_styles
+  pi_prompt_right
 end
