@@ -39,24 +39,27 @@ function git_prompt
       set_color $pi_rebasing_style
       echo -ne "(rebasing)"
       set_color normal
-  end
+    end
   end
 end
 
 function pi_prompt_left
   set -l last_st $status
+
+  echo -ne " "
   if not test $last_st -eq 0
     set_color $pi_error_style
   end
 
-  echo -ne " "(prompt_pwd)" "
+  echo -ne (prompt_pwd)
 
   if not test $last_st -eq 0
-    set_color $pi_error_style
-    echo -ne "("$last_st")"
-    echo -ne " "
+    set_color normal
+    set_color $pi_fade_style
+    echo -ne " ("$last_st")"
   end
   set_color normal
+  echo -ne " "
 end
 
 function pi_prompt_right
